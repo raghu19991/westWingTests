@@ -1,4 +1,4 @@
-# westWingTests  
+# Description
   The Project contains a test for Searching product,adding it to wishlist and then it.  
   It is currently set to run with chromedriver. You can change it to headless by uncommenting the line in 'Environment Variables' keyword  
   Results are published to the Results Folder.  
@@ -18,8 +18,7 @@ robot -d results Tests/Wishlist/W01_AddRemoveProducts.robot
 Load the Project into any of the IDE  
 Hit Run(RIDE/SNOWRIDE) or run above command from terminal (Pycharm)  
   
-### In case you are using snowride IDE ,the snowride_runner is provide in the root directory.The python_install_dir path needs to be updated in the file and the file needs to be selected in Script input of Run Tab in the IDE.  
-  
-##**NOTE:**  
-The chromedriver in the root directory needs to be updated if it is incompatable with your browser version.  
+### NOTE:   
+1)The chromedriver in the root directory needs to be updated if it is incompatable with your browser version.  
 Chromedriver can be downloaded from https://chromedriver.chromium.org/downloads  
+2)In case you are using snowride IDE ,the snowride_runner is provide in the root directory.The python_install_dir path needs to be updated in the file and the file needs to be selected in Script input of Run Tab in the IDE.
