@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.7.0 on win32)" generated="20210327 22:10:27.099" rpa="false" schemaversion="2">
+<suite id="s1" name="W01 AddRemoveProducts" source="J:\myProjects\westWingTests\Tests\Wishlist\W01_AddRemoveProducts.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Environment Variables</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Environment Variables" library="Environment">
+<kw name="Add Location Strategy" library="SeleniumLibrary">
+<arg>data-testid</arg>
+<arg>Custom Locator Strategy</arg>
+<arg>persist=true</arg>
+<doc>Adds a custom location strategy.</doc>
+<status status="PASS" starttime="20210327 22:10:27.380" endtime="20210327 22:10:27.381"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Browser}</arg>
+<arg>headlesschrome</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210327 22:10:27.382" level="INFO">${Browser} = headlesschrome</msg>
+<status status="PASS" starttime="20210327 22:10:27.381" endtime="20210327 22:10:27.382"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Set Global Variable</arg>
+<arg>${chrome_path}</arg>
+<arg>r'J:\\myProjects\\westWingTests\\Config/chromedriver.exe'</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20210327 22:10:27.382" endtime="20210327 22:10:27.382"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Set Environment Variable</arg>
+<arg>webdriver.chrome.driver</arg>
+<arg>${chrome_path}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20210327 22:10:27.382" endtime="20210327 22:10:27.383"/>
+</kw>
+<kw name="User Variables" library="Environment">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${tester1_username}</arg>
+<arg>raghu19991@gmail.com</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210327 22:10:27.384" level="INFO">${tester1_username} = raghu19991@gmail.com</msg>
+<status status="PASS" starttime="20210327 22:10:27.383" endtime="20210327 22:10:27.384"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${tester1_password}</arg>
+<arg>WestW!ng123</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210327 22:10:27.386" level="INFO">${tester1_password} = WestW!ng123</msg>
+<status status="PASS" starttime="20210327 22:10:27.384" endtime="20210327 22:10:27.386"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:27.383" endtime="20210327 22:10:27.386"/>
+</kw>
+<kw name="TST01" library="Environment">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${HOMEPAGE}</arg>
+<arg>https://www.westwingnow.de</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210327 22:10:27.388" level="INFO">${HOMEPAGE} = https://www.westwingnow.de</msg>
+<status status="PASS" starttime="20210327 22:10:27.386" endtime="20210327 22:10:27.388"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:27.386" endtime="20210327 22:10:27.388"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>TST02</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20210327 22:10:27.388" endtime="20210327 22:10:27.388"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>SIT</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20210327 22:10:27.388" endtime="20210327 22:10:27.388"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:27.380" endtime="20210327 22:10:27.390"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:27.379" endtime="20210327 22:10:27.390"/>
+</kw>
+<test id="s1-t1" name="TC001_Add without Login and Remove Product_ExtUser">
+<kw name="Given I am on the WestwingNow home page" library="HomePage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOMEPAGE}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210327 22:10:27.393" level="INFO">Opening browser 'headlesschrome' to base url 'https://www.westwingnow.de'.</msg>
+<status status="PASS" starttime="20210327 22:10:27.393" endtime="20210327 22:10:34.665"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1050</arg>
+<arg>708</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20210327 22:10:34.665" endtime="20210327 22:10:34.788"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Cookie_AcceptButton}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210327 22:10:34.788" endtime="20210327 22:10:35.456"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Cookie_AcceptButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:35.457" level="INFO">Clicking button 'xpath=//button[@id='onetrust-accept-btn-handler' and text()='Cookies akzeptieren']'.</msg>
+<status status="PASS" starttime="20210327 22:10:35.456" endtime="20210327 22:10:35.606"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${Cookie_AcceptButton}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20210327 22:10:35.606" endtime="20210327 22:10:36.033"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:27.393" endtime="20210327 22:10:36.033"/>
+</kw>
+<kw name="When I search for &quot;möbel&quot;" library="PageHeader" sourcename="I search for &quot;${product}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>${product}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:36.036" level="INFO">Typing text 'möbel' into text field 'data-testid:search-input'.</msg>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>search-input</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:36.039" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=search-input]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:36.052" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c7f7c5ac-9117-4328-8d57-fc608b18e294")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:36.038" endtime="20210327 22:10:36.052"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:36.053" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c7f7c5ac-9117-4328-8d57-fc608b18e294")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:36.053" endtime="20210327 22:10:36.053"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:36.037" endtime="20210327 22:10:36.054"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:36.035" endtime="20210327 22:10:36.844"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchBox}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210327 22:10:36.845" level="INFO">Sending key(s) ('RETURN',) to data-testid:search-input element.</msg>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>search-input</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:36.846" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=search-input]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:36.853" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c7f7c5ac-9117-4328-8d57-fc608b18e294")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:36.846" endtime="20210327 22:10:36.853"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:36.854" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c7f7c5ac-9117-4328-8d57-fc608b18e294")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:36.854" endtime="20210327 22:10:36.854"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:36.845" endtime="20210327 22:10:36.854"/>
+</kw>
+<msg timestamp="20210327 22:10:37.125" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210327 22:10:37.126" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210327 22:10:36.844" endtime="20210327 22:10:37.150"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Jetzt registrieren und 15€ Gutschein sichern!</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210327 22:10:37.150" endtime="20210327 22:10:38.966"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${WISHLIST}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:38.967" level="INFO">Double clicking element 'data-testid:wishlist-bubble'.</msg>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>wishlist-bubble</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:38.970" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=wishlist-bubble]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:38.981" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a3b3cc27-a0b9-4ff4-86ea-ff2fc7f61584")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:38.969" endtime="20210327 22:10:38.981"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:38.982" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a3b3cc27-a0b9-4ff4-86ea-ff2fc7f61584")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:38.981" endtime="20210327 22:10:38.982"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:38.968" endtime="20210327 22:10:38.983"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:38.966" endtime="20210327 22:10:39.375"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
+<arg>Jetzt registrieren und 15€ Gutschein sichern!</arg>
+<arg>5</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" starttime="20210327 22:10:39.376" endtime="20210327 22:10:39.900"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:36.034" endtime="20210327 22:10:39.901"/>
+</kw>
+<kw name="Then I should see product listing page with a list of products" library="SearchResultsPage">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${Product_Grid}</arg>
+<arg>There are no Products available with the given name.Please check the Name entered</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>plp-products-grid</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:39.905" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=plp-products-grid]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:39.919" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c540c4b0-dc08-4d59-9943-8bcf1a67646a")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:39.904" endtime="20210327 22:10:39.919"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:39.919" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c540c4b0-dc08-4d59-9943-8bcf1a67646a")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:39.919" endtime="20210327 22:10:39.920"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:39.903" endtime="20210327 22:10:39.920"/>
+</kw>
+<msg timestamp="20210327 22:10:39.920" level="INFO">Current page contains element 'data-testid:plp-products-grid'.</msg>
+<status status="PASS" starttime="20210327 22:10:39.902" endtime="20210327 22:10:39.920"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${BackToTop_Button}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>back-to-top-button</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:39.921" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=back-to-top-button]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:40.415" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="e26aa540-1fcf-4cbc-9dcd-ebf8c113ac2d")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:39.921" endtime="20210327 22:10:40.415"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:40.415" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="e26aa540-1fcf-4cbc-9dcd-ebf8c113ac2d")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:40.415" endtime="20210327 22:10:40.415"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:39.920" endtime="20210327 22:10:40.416"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:39.920" endtime="20210327 22:10:40.435"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${count}</var>
+<arg>${Product_Unique}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>generic-product</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:40.437" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=generic-product]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:40.448" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c75cb8d2-591e-473c-bfad-3dc8955aee5f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210327 22:10:40.436" endtime="20210327 22:10:40.448"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:40.449" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c75cb8d2-591e-473c-bfad-3dc8955aee5f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="09fc5dcc-32c1-45b4-a469-1aa52d7a9ed6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="9347f85d-1277-49f2-8726-a475114c2894")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="23543367-5bd2-4f60-9e16-7475b1b4c125")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="f6deca94-7fe9-40a8-9f64-59cd397148b9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="e4b5dc81-b27b-461b-a434-d0d49f73bf35")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="8143c48d-2471-40b8-a4d4-9544a566be9b")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="b9a05d00-95ac-4163-82a5-8772dd589b69")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="99aea3ff-558d-45ea-9760-04ce65ccac75")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="32a4da20-8d28-4c25-8941-bf26707bd32b")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="07d54c6f-5b8f-4f94-a3e9-6683ce95ca18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="aeda59ec-3c65-41f1-a94a-c1e68bd00fce")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="573f2c9c-6abe-484d-8144-a14393cbbfc6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c7ee611d-b06d-4b13-9902-4c953c5a8425")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="f2b23ede-c03e-4abf-be35-2911c8213b3e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="749bb5b4-991e-4670-b2d7-7773213f88a7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="6f7c3b25-c725-4f1e-9773-33772c8742e8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a86f3213-5362-403d-9a4b-1d2ced481722")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="dd366160-c7d5-4593-939e-4652bfc06744")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="78c97a17-123f-4db1-933b-a6739a153ccc")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="8eec809d-87e1-4a97-a934-af90b627fef5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5bcc7f82-b590-421c-97fc-632fe1009162")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a77863ad-57df-4bfc-8d97-bbe2df7122c1")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="4b4efdd2-c637-425d-8aec-c60d40267784")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="98b827ae-1531-4c27-bb09-cc5528315a0b")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="df866de4-a3e9-4b9d-b2f2-fb89d179c42f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="66888c88-f8a0-4441-a149-804337cc6b87")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="9bfa8208-815d-400f-b080-ed95334d85db")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="06127073-b3ad-49a6-b0db-6bec15a652a7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="37b5d0e1-9912-4572-8ae8-d3cda9f95fc1")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="2caea81f-3d44-479d-ad8a-ae2ccdd601b2")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="08175398-bfe3-4ab2-86fa-0705ea72382f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="3badeb5a-fcb7-472d-8750-b8f76e2f086c")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="966a8c69-0d6d-4b8b-95da-9cede67b0066")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="2a4288f0-2581-4b6d-861b-47ec33b00db5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="969f7d62-ba8b-48f0-8c0a-ff9d13952af9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="2a118a16-06c0-4ed8-a679-55c83c61f7a7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="8c8fcf20-e2c2-4b5c-a7fb-98e85a081976")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="0fa6fe53-04f7-4880-bdfb-c6ff86283c12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="233174e3-23e4-49e0-b377-61f63a06d353")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="955579d6-2c95-4a99-ba4f-5ac1741c09a4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="55d9fa7a-cd0c-4702-80f2-2b4b2abe49f7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="7ba4cbf3-34f1-429a-8b6d-651d4f2a5507")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="57c1d03f-bdc4-44ef-87b8-b34b12e10b96")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="e03b9e9e-ba80-4824-870c-126f665c9ab3")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="b61b2ce4-9d3b-44b9-b5da-0f24ac9fe6f5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5c3fa56d-dcbd-4bb7-aee8-08cdda4e6155")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="f8a1bd92-65cd-4484-bdd5-16adfe424073")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="2334d787-a5e2-4bda-b5d2-ad29a24909e7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="278a255c-4d27-4dde-8c9d-df9ea4a38863")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="8661c04b-1e48-4b08-9068-04b7a6804276")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="e1a9f905-8be0-4347-8f88-cbe40078769e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="aed7b459-c724-4b18-81c2-0aa6d266df51")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="d3cb1e35-802e-4790-8f62-dca4f0171f05")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="db90aee8-91d4-423a-85f0-fcd00a071ba8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="584bcad4-6390-466a-917a-7c370a847538")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="eef67d98-3b67-41b6-8bf1-2210c006e18c")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="638d4abf-48ee-40bf-a5cc-da83e12a4b2c")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a44cece6-f715-4e8d-bbb3-b358f3368a71")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="f57700a9-e032-4168-9363-ee7f0aa18476")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5e6f7f29-cb39-4219-b898-86c11bc6cd31")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a99e4cd7-ce6d-4631-911d-cc7ab3245961")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a851e1c4-332f-447c-80fe-1e013d82ac16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="2c5b5d32-35b1-48bb-8da5-0a695d169de4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="8f5a002f-6563-4c40-98af-b4d2aa0226f3")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="ca39e3bf-88b2-4773-af74-4a3bd817f42e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a044dbb9-1e5a-42c3-ba93-8719766d807c")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="dfce425d-a603-4313-a237-d708810bec48")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c3c87476-9e3b-4a63-a515-dcf53c905e6d")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="2defad5f-d0d3-4ea1-92c4-6929cb268b37")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5486c8fb-9b15-4307-a85e-6e57c6d9ab0e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="9ffd0db2-fbcb-4d01-a6d9-7ccecf445740")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="78a7f411-d78b-474d-aa6a-a81d36407dc8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a3127e52-7766-4279-a08e-cbbac1fadf91")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="e2b06a50-8c41-44bb-92db-376b663ecaf3")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="fa4d05e7-e143-41c7-b6a4-206da8bc9baa")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="f8f80377-6792-46c5-a12b-3ca86e11fa22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="73a70d8b-6ec7-4395-b54c-17681a76beb9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="d35881fa-c7dc-4d80-a360-e1091cefddf8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="e12cae2e-6d08-41d4-8c2f-3e7023c9b7ae")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="da201e19-0a75-4a44-8bb1-a7e68609c445")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="8d18022a-e75e-4578-891b-3a5cde7cd911")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="0aff3c68-9abf-45c6-ba66-23c48780b053")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c02fd779-4310-4021-8959-9831a6bd6cea")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a6edfe5a-3e32-478d-933f-2a134ae820b5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="aa29270c-79de-45da-96a8-e86a301098a8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="bc1cbf63-a660-4cd9-adc3-d3f3e67c3455")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a616f9d6-e0bb-4ace-b8bc-63fad0563f86")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="e8a2f143-eae5-47ed-932f-280f40b480c4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="208e2d2f-66b2-4fa9-887f-fa7aa7d694f5")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:40.448" endtime="20210327 22:10:40.449"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:40.436" endtime="20210327 22:10:40.449"/>
+</kw>
+<msg timestamp="20210327 22:10:40.449" level="INFO">${count} = 90</msg>
+<status status="PASS" starttime="20210327 22:10:40.435" endtime="20210327 22:10:40.449"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${count}&gt;1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20210327 22:10:40.450" endtime="20210327 22:10:40.450"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Product_Header}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210327 22:10:40.450" endtime="20210327 22:10:40.465"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${totalCount}</var>
+<arg>${Product_Header}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:40.488" level="INFO">${totalCount} = 2361 Produkte</msg>
+<status status="PASS" starttime="20210327 22:10:40.465" endtime="20210327 22:10:40.488"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalCount}</var>
+<arg>int((${totalCount.split()})[0])</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210327 22:10:40.489" level="INFO">${totalCount} = 2361</msg>
+<status status="PASS" starttime="20210327 22:10:40.488" endtime="20210327 22:10:40.489"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${totalCount}&gt;1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20210327 22:10:40.489" endtime="20210327 22:10:40.490"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:39.902" endtime="20210327 22:10:40.490"/>
+</kw>
+<kw name="When I click on wishlist icon of the first found product" library="SearchResultsPage">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${all_wishlist_icons}</var>
+<arg>${WishList_Icon}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>wishlist-icon</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:40.492" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=wishlist-icon]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:40.507" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="27759ddf-f86e-44bb-b1ea-7640e2aec9fa")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210327 22:10:40.492" endtime="20210327 22:10:40.507"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:40.508" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="27759ddf-f86e-44bb-b1ea-7640e2aec9fa")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="316da6a0-2ce6-4f7d-a8f2-e66b9a209226")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="7cb9b6c6-0675-437f-84ca-45429d597168")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="3b82c1e6-a60f-4bdd-9a29-1e11c95f4550")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="d5c4d1f5-025f-4820-befe-b0af64b0a31b")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="3fb10527-67e6-49fa-a07e-20ec990ef24c")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a7e478be-a11b-4284-9277-05eb136a2c3f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="da6eb0a2-c062-42d2-9ebb-ba6b280c9c57")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5480e01f-bfa1-4d86-a84a-ea9c63b54028")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="8d9db566-649f-404b-9ab8-910a59472dad")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="f9c24004-3974-43f3-a012-c5c11f5e8b59")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="91ee10bd-e8a7-43bb-a137-fc80e6b5a31b")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="da3036e3-827b-43d3-97f0-f37b6ea42fb5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c2747ce8-119d-4771-9b71-23773ec9d738")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5a5983ce-85cc-49c4-8c6f-9942fa6c79ad")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="8a812d9b-1182-4b68-9c2c-55d3b4313363")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="70d1554c-f3c7-4413-a010-32bde553ebc6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="189fc0e8-8507-4c07-a278-e45d9d9f47b1")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="39ba2e70-c1ef-4b2d-a104-cf15878d338a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="7cdc7307-806a-42d3-b800-a776ca4347f9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="84c6151d-165b-43ef-b349-6e122d948faf")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="1f2f3929-82bf-4ad6-ac64-76844ce82850")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="b269edfc-91e9-492b-9d1b-a6a144dc98c7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="6e15f6bd-c449-427d-937e-1ff3e5aa6fec")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="584350af-5767-412a-872e-f05011671a3a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="7a1d6549-3595-4258-b105-22bd66c56f21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c75822ae-6b0f-43f3-9f69-93e31e980d94")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a6d2df7f-1975-41ba-aaaf-b960f47504db")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="ddae395e-a01a-4325-896e-afcc25b6e30e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="ff6f4cf7-ccbb-4cca-b5b3-debea8571780")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="814d6c20-6e1f-4dca-8740-646b3a30178f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="80c9e135-e7b8-49f1-b286-0cf26d66ac97")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5af3f484-a752-488b-99cd-2f009e867109")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="d58c30c5-b2a1-4946-adca-8cf6f7e9b2b6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="79fd4c41-21eb-4aaf-b14f-05cfeecb7c5b")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="01c9ef40-2477-460d-a07b-831489447102")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="175db9bb-b739-477c-ac24-47aabaa94aba")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="87297a02-d7df-4bff-8292-55c2fae75086")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="f0325931-6da0-4291-9cee-9319e6a01943")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="d993d6d4-34c9-412c-8b9f-b99058cfcecb")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="93843530-90bd-4a95-be6d-8ac64a71d994")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="7f054fe8-7dd7-4858-87b4-b9802384fef5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="99d9024a-3963-40b3-a21a-dc1121e68bb3")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="14f030ed-83e3-467f-b91a-ff3d5466daca")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="83624f22-de61-4627-a323-2a2d9e430b4c")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="1c55e6e4-cc01-42c8-a30a-4a231441077f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="7b563366-0912-4fb1-ba9d-38e49589ffd8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5566aabb-9fff-42e4-aa1d-64b042ee7fa5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="243e8a43-27e5-401c-87c0-fe5e6f46f960")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5da7957b-b106-4848-a1d8-f069e038772f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="2d34622e-7964-4ca7-98f8-982801fb7185")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c9413a49-df13-4fe5-b8af-bcb245cf76d4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="73943445-942b-454e-9058-1b0a655d1a0c")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="78b517ac-357a-48fc-a317-dbe3b5788708")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="15a44747-e43a-49b1-a44a-7496174b359b")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="eb92330c-ea94-4ea0-a1bb-87e7755f6410")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="6c1f5f67-cf81-403f-a030-8a46250e557e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="faf428f9-f48b-442e-9d08-e9cfc28b4be7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="ca949002-bd5b-40b0-8250-34887eec38ba")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="dd01e442-467f-4877-a267-428c10a243ea")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="496ef6ea-0e69-41ed-b3ba-141a6174ba46")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="49ae39d0-fe01-4f28-8974-1fe3e231435a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="0bfae9fe-ad8b-47bf-be63-8cc95abe552e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="4321ac76-435d-4177-b4c4-b3ea90b2a195")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="6c880922-8bfd-4103-97fe-6d02175714d1")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="772fe17d-f3c8-497c-9562-fe14095ad26d")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="16052f4b-ab5f-49fb-889e-5dacd93d117f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="83c4f26e-e88c-4033-808b-38d9e3a6e34d")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="f076caa5-3c8d-4517-81de-b56082a05a0f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="80373e5c-5c70-4c25-a26e-123a1e3232f6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="7a64fe9a-fa6c-47d6-b0a1-46344f59ff39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="b4bc9841-5e9c-42b9-ae54-b868758ddc6e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="e226bf5b-8a87-4e87-9bf8-8b9a287d77d3")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="45de16ed-4c56-466f-a7ac-01915e526bd5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="b322f13d-3c38-4791-8db6-3bf5dc4cb7fb")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="4e1d72df-6289-4cef-8a22-8ab292fdb717")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="d16c6642-33ff-41a7-9d97-deebd01fbddf")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="30f2ebfe-2451-42dc-a8c3-4f8f98941efa")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="cce15b0d-7e9f-475b-a801-60264395228a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="9fe71a3e-8232-42e9-9f86-e1648e543a6e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="cb407715-abdf-4f2f-89a9-e2d892f1897d")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="49145b45-f0b0-49fc-9cd9-27036ff3923a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5ecfd361-2a55-41ec-9c14-2912b7f5f753")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="c026240b-76af-46b8-911c-5aa71a03dc7d")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="1a5ea37b-4c94-44a4-959a-c2eff50a6604")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="0b87da9e-b253-4422-b1de-dc68cdc181eb")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="d5010366-1680-45a3-a6dc-973b33480586")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a31544cd-afe6-4b30-bc4f-b9894ae99fa5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="4e77cdcf-0f77-4ad5-9469-6d59524e77f6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="7fd372bc-c6ff-4a2b-a6a5-2b6225a56b33")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:40.507" endtime="20210327 22:10:40.508"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:40.491" endtime="20210327 22:10:40.509"/>
+</kw>
+<msg timestamp="20210327 22:10:40.509" level="INFO">${all_wishlist_icons} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="27759ddf-f86e-44bb-b1ea-7640e2aec9fa")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210327 22:10:40.491" endtime="20210327 22:10:40.509"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${first_Wishlist_icon}</var>
+<arg>${all_wishlist_icons[0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210327 22:10:40.510" level="INFO">${first_Wishlist_icon} = &lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="27759ddf-f86e-44bb-b1ea-7640e2aec9fa")&gt;</msg>
+<status status="PASS" starttime="20210327 22:10:40.509" endtime="20210327 22:10:40.511"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${first_Wishlist_icon}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20210327 22:10:40.511" endtime="20210327 22:10:40.796"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${first_Wishlist_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:40.797" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="27759ddf-f86e-44bb-b1ea-7640e2aec9fa")&gt;'.</msg>
+<status status="PASS" starttime="20210327 22:10:40.796" endtime="20210327 22:10:40.973"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:40.490" endtime="20210327 22:10:40.973"/>
+</kw>
+<kw name="Then I should see the login/registration overlay" library="LoginOverlayPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LoginOverLay}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>login_and_register</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:40.976" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=login_and_register]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:41.020" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="31e2774f-d00e-4be2-aa99-445110acdbb5")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:40.975" endtime="20210327 22:10:41.020"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:41.020" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="31e2774f-d00e-4be2-aa99-445110acdbb5")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:41.020" endtime="20210327 22:10:41.020"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:40.975" endtime="20210327 22:10:41.021"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:40.974" endtime="20210327 22:10:41.021"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Neukunde?</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210327 22:10:41.055" level="INFO">Current page contains text 'Neukunde?'.</msg>
+<status status="PASS" starttime="20210327 22:10:41.021" endtime="20210327 22:10:41.055"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Schnell registrieren, damit Sie Ihr Lieblingsprodukt dauerhaft speichern können!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210327 22:10:41.112" level="INFO">Current page contains text 'Schnell registrieren, damit Sie Ihr Lieblingsprodukt dauerhaft speichern können!'.</msg>
+<status status="PASS" starttime="20210327 22:10:41.056" endtime="20210327 22:10:41.112"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:40.974" endtime="20210327 22:10:41.113"/>
+</kw>
+<kw name="When I switch to login form of the overlay" library="LoginOverlayPage">
+<kw name="No Operation" library="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="PASS" starttime="20210327 22:10:41.114" endtime="20210327 22:10:41.115"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:41.114" endtime="20210327 22:10:41.115"/>
+</kw>
+<kw name="And I log in with &quot;tester1&quot; credentials" library="LoginOverlayPage" sourcename="I log in with &quot;${tester1}&quot; credentials">
+<kw name="Evaluate" library="BuiltIn">
+<var>${USER_EMAIL}</var>
+<arg>'${${tester1}_username}'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210327 22:10:41.117" level="INFO">${USER_EMAIL} = raghu19991@gmail.com</msg>
+<status status="PASS" starttime="20210327 22:10:41.117" endtime="20210327 22:10:41.118"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${USER_PASSWORD}</var>
+<arg>'${${tester1}_password}'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210327 22:10:41.118" level="INFO">${USER_PASSWORD} = WestW!ng123</msg>
+<status status="PASS" starttime="20210327 22:10:41.118" endtime="20210327 22:10:41.118"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email}</arg>
+<arg>${USER_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:41.119" level="INFO">Typing text 'raghu19991@gmail.com' into text field 'data-testid:long-register-email-field'.</msg>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>long-register-email-field</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:41.120" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=long-register-email-field]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:41.129" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="809c20ec-4319-4730-a89b-8834cea5ea9e")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:41.120" endtime="20210327 22:10:41.129"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:41.129" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="809c20ec-4319-4730-a89b-8834cea5ea9e")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:41.129" endtime="20210327 22:10:41.129"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:41.119" endtime="20210327 22:10:41.129"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:41.119" endtime="20210327 22:10:41.293"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${USER_PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:41.295" level="INFO">Typing password into text field 'data-testid:long-register-password-field'.</msg>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>long-register-password-field</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:41.297" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=long-register-password-field]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:41.311" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="80a606a3-b447-4ec7-8d0b-8fb6b3dff188")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:41.296" endtime="20210327 22:10:41.311"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:41.311" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="80a606a3-b447-4ec7-8d0b-8fb6b3dff188")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:41.311" endtime="20210327 22:10:41.311"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:41.295" endtime="20210327 22:10:41.312"/>
+</kw>
+<msg timestamp="20210327 22:10:41.351" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210327 22:10:41.433" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210327 22:10:41.294" endtime="20210327 22:10:41.433"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${termsAndConditions}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:41.433" level="INFO">Selecting checkbox '//input[@name='isTermsAccepted']'.</msg>
+<status status="PASS" starttime="20210327 22:10:41.433" endtime="20210327 22:10:41.538"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Registration}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:41.538" level="INFO">Clicking button 'data-testid:login_reg_submit_btn'.</msg>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>login_reg_submit_btn</arg>
+<arg>input</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:41.541" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=login_reg_submit_btn]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:41.549" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:41.540" endtime="20210327 22:10:41.549"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:41.550" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:41.550" endtime="20210327 22:10:41.550"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:41.539" endtime="20210327 22:10:41.550"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:41.538" endtime="20210327 22:10:41.739"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${Registration}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>login_reg_submit_btn</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:41.742" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=login_reg_submit_btn]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:41.799" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:41.741" endtime="20210327 22:10:41.799"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:41.800" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:41.799" endtime="20210327 22:10:41.800"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:41.740" endtime="20210327 22:10:41.800"/>
+</kw>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>login_reg_submit_btn</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:42.063" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=login_reg_submit_btn]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:42.078" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:42.062" endtime="20210327 22:10:42.078"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:42.079" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:42.078" endtime="20210327 22:10:42.079"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:42.061" endtime="20210327 22:10:42.080"/>
+</kw>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>login_reg_submit_btn</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:42.312" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=login_reg_submit_btn]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:42.319" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:42.311" endtime="20210327 22:10:42.319"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:42.320" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:42.319" endtime="20210327 22:10:42.320"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:42.310" endtime="20210327 22:10:42.320"/>
+</kw>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>login_reg_submit_btn</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:42.543" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=login_reg_submit_btn]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:42.551" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:42.543" endtime="20210327 22:10:42.551"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:42.552" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:42.551" endtime="20210327 22:10:42.552"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:42.542" endtime="20210327 22:10:42.552"/>
+</kw>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>login_reg_submit_btn</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:42.776" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=login_reg_submit_btn]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:42.783" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:42.775" endtime="20210327 22:10:42.783"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:42.784" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:42.783" endtime="20210327 22:10:42.784"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:42.774" endtime="20210327 22:10:42.784"/>
+</kw>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>login_reg_submit_btn</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:43.012" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=login_reg_submit_btn]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:43.020" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:43.012" endtime="20210327 22:10:43.020"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:43.021" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="5b9f3b0d-e5eb-4916-94e3-0526688a0576")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:43.020" endtime="20210327 22:10:43.021"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:43.010" endtime="20210327 22:10:43.021"/>
+</kw>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>login_reg_submit_btn</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:43.248" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=login_reg_submit_btn]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:43.507" level="INFO">${element} = []</msg>
+<status status="PASS" starttime="20210327 22:10:43.247" endtime="20210327 22:10:43.507"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:43.508" level="INFO">[]</msg>
+<status status="PASS" starttime="20210327 22:10:43.507" endtime="20210327 22:10:43.508"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:43.245" endtime="20210327 22:10:43.508"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:41.739" endtime="20210327 22:10:43.508"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>${LoginOverLay}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>login_and_register</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:43.511" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=login_and_register]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:43.517" level="INFO">${element} = []</msg>
+<status status="PASS" starttime="20210327 22:10:43.510" endtime="20210327 22:10:43.517"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:43.518" level="INFO">[]</msg>
+<status status="PASS" starttime="20210327 22:10:43.517" endtime="20210327 22:10:43.518"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:43.509" endtime="20210327 22:10:43.518"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:43.508" endtime="20210327 22:10:43.518"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:41.116" endtime="20210327 22:10:43.518"/>
+</kw>
+<kw name="Then the product should be added to the wishlist" library="SearchResultsPage">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${WISHLIST_ATT}</arg>
+<arg>data-is-selected</arg>
+<arg>true</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<msg timestamp="20210327 22:10:43.552" level="INFO">Element '//*[@data-testid='wishlist-icon'][1]/*[local-name() = 'svg']' attribute 'data-is-selected' contains value 'true'.</msg>
+<status status="PASS" starttime="20210327 22:10:43.519" endtime="20210327 22:10:43.552"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${wishlistCount}</var>
+<arg>${WISHLIST_COUNTER}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>wishlist-counter</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:43.555" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=wishlist-counter]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:43.606" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="11434afa-9612-4058-98aa-a71122e09297")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:43.554" endtime="20210327 22:10:43.606"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:43.606" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="11434afa-9612-4058-98aa-a71122e09297")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:43.606" endtime="20210327 22:10:43.606"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:43.553" endtime="20210327 22:10:43.606"/>
+</kw>
+<msg timestamp="20210327 22:10:43.625" level="INFO">${wishlistCount} = 1</msg>
+<status status="PASS" starttime="20210327 22:10:43.553" endtime="20210327 22:10:43.625"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${wishlistCount}</arg>
+<arg>1</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210327 22:10:43.625" endtime="20210327 22:10:43.626"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:43.519" endtime="20210327 22:10:43.627"/>
+</kw>
+<kw name="And I go to the wishlist page" library="PageHeader">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Wunschliste</arg>
+<arg>5</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210327 22:10:43.629" endtime="20210327 22:10:43.658"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${WISHLIST}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:43.659" level="INFO">Double clicking element 'data-testid:wishlist-bubble'.</msg>
+<kw name="Custom Locator Strategy" library="Environment">
+<arg>&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="879e8475960bfe7b7b7b5b4ae1d26ae8")&gt;</arg>
+<arg>wishlist-bubble</arg>
+<arg>None</arg>
+<arg>{}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>return document.querySelectorAll("[data-testid=${locator}]");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210327 22:10:43.662" level="INFO">Executing JavaScript:
+return document.querySelectorAll("[data-testid=wishlist-bubble]");
+Without any arguments.</msg>
+<msg timestamp="20210327 22:10:43.670" level="INFO">${element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a3b3cc27-a0b9-4ff4-86ea-ff2fc7f61584")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:43.661" endtime="20210327 22:10:43.670"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210327 22:10:43.670" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="879e8475960bfe7b7b7b5b4ae1d26ae8", element="a3b3cc27-a0b9-4ff4-86ea-ff2fc7f61584")&gt;]</msg>
+<status status="PASS" starttime="20210327 22:10:43.670" endtime="20210327 22:10:43.670"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:43.660" endtime="20210327 22:10:43.671"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:43.659" endtime="20210327 22:10:47.068"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Click Element using Javascript</arg>
+<arg>${WISHLIST}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20210327 22:10:47.068" endtime="20210327 22:10:47.068"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Teilen Sie Ihre Wunschliste</arg>
+<arg>5</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210327 22:10:47.069" endtime="20210327 22:10:47.100"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:43.628" endtime="20210327 22:10:47.100"/>
+</kw>
+<kw name="And I delete the product from my wishlist" library="WishListPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>In den Warenkorb</arg>
+<arg>5</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210327 22:10:47.101" endtime="20210327 22:10:47.129"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${DELETE_BUTTON}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210327 22:10:47.130" endtime="20210327 22:10:47.362"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${DELETE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210327 22:10:47.363" level="INFO">Clicking button '(//button[contains(@class,'qaBlockListProduct') and contains(@class,'delete')])'.</msg>
+<status status="PASS" starttime="20210327 22:10:47.362" endtime="20210327 22:10:47.456"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
+<arg>${DELETE_BUTTON}</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" starttime="20210327 22:10:47.457" endtime="20210327 22:10:47.514"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:47.101" endtime="20210327 22:10:47.515"/>
+</kw>
+<status status="PASS" starttime="20210327 22:10:27.390" endtime="20210327 22:10:47.516"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210327 22:10:47.519" endtime="20210327 22:10:49.661"/>
+</kw>
+<doc>*WishList*
+All tests related to wishlist functionality
+
+*Tag*
+Wishlist</doc>
+<status status="PASS" starttime="20210327 22:10:27.101" endtime="20210327 22:10:49.661"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="W01 AddRemoveProducts">W01 AddRemoveProducts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
