@@ -5,7 +5,7 @@
   
 ## Pre-requisites  
 Install Python3.7 and add it to PATH variable.  
-IDE: RIDE/SNOWRIDE/PyCharm  
+IDE: RIDE/SNOWRIDE/PyCharm(Optional)  
   
 ## Simple Run:  
 1) Clone the repo.   
@@ -19,6 +19,6 @@ Load the Project into any of the IDE
 Hit Run(RIDE/SNOWRIDE) or run above command from terminal (Pycharm)  
   
 ### NOTE:   
-1)The chromedriver in the root directory needs to be updated if it is incompatable with your browser version.  
+1)The **chromedriver** in the root directory needs to be updated if it is incompatable with your browser version.  
 Chromedriver can be downloaded from https://chromedriver.chromium.org/downloads  
-2)In case you are using snowride IDE ,the snowride_runner is provide in the root directory.The python_install_dir path needs to be updated in the file and the file needs to be selected in Script input of Run Tab in the IDE.
+2)In case you are using snowride IDE ,the snowride_runner is provide in the root directory.The python_install_dir path needs to be updated in the file and the file needs to be selected in Script input of Run Tab in the IDE.  
